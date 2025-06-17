@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordle</title>
+    <link rel="stylesheet" href="./stylesheet.css" />
+  </head>
+  <body>
+    <input type="text" id="hidden-input" />
+    <div class="title-bar">
+      <h2 class="header">Wordle</h2>
+    </div>
+
+    <!-- <div class="alert">
+      <span class="closebtn">&times;</span>
+     <span class ="info"> &#9432; </span> Please Check Internet Connection
+    </div> -->
+
+    <div class="info-section">
+      <div class="loader">🌀</div>
+    </div>
+
+    <div class="win-message hidden-2">🎉 You Win! 🎉</div>
+
+    <div onclick="focusInput()" class="score-board"></div>
+
+    <script src="wordle.js"></script>
+  </body>
+</html>

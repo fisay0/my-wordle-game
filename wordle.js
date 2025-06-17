@@ -17,7 +17,12 @@ let hasWon = false;
 
 function focusInput() {
   document.getElementById("hidden-input").focus();
+  input.focus({ preventScroll: true });
 }
+
+document.getElementById("hidden-input").addEventListener("keydown", (e) => {
+  e.preventDefault(); //stop some scroll default on mobile
+});
 
 async function validateWord(word) {
   const promise = await fetch(valid, {

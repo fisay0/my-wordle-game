@@ -36,7 +36,7 @@ async function getWord() {
 }
 
 window.addEventListener("load", async () => {
-  correctWord = await getWord();
+  correctWord = (await getWord()).toLowerCase().normalize();
 });
 
 for (let i = 0; i < rows; i++) {
@@ -51,6 +51,8 @@ for (let i = 0; i < rows; i++) {
     scoreBoard.appendChild(gridItem);
   }
 }
+
+gridItems[rowNumber][columnNumber].addEventListener("click", focusInput);
 
 document.addEventListener("keydown", onKeyPress);
 function onKeyPress(e) {
@@ -84,7 +86,7 @@ async function handleEnter(event) {
 
   let fiveLetterWord = gridItems[rowNumber]
     .slice(0, 5)
-    .map((div) => div.textContent)
+    .map((div) => div.textContent.trim().toLowerCase().normalize())
     .join("");
   console.log(fiveLetterWord.toLowerCase());
 

@@ -45,14 +45,13 @@ for (let i = 0; i < rows; i++) {
   for (let j = 0; j < columns; j++) {
     const gridItem = document.createElement("div");
     gridItem.className = "gridItem";
+    gridItem.addEventListener("click", focusInput);
     gridItems[i][j] = gridItem;
 
     // Append the grid item to the grid container
     scoreBoard.appendChild(gridItem);
   }
 }
-
-gridItems.addEventListener("click", focusInput);
 
 document.addEventListener("keydown", onKeyPress);
 function onKeyPress(e) {

@@ -137,8 +137,9 @@ body {
 #hidden-input {
   opacity: 0;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: -100px;
+  left: -100px;
 }
 
 .alert {

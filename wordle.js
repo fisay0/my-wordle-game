@@ -45,8 +45,9 @@ for (let i = 0; i < rows; i++) {
   for (let j = 0; j < columns; j++) {
     const gridItem = document.createElement("div");
     gridItem.className = "gridItem";
-    gridItem.addEventListener("click", focusInput);
+
     gridItems[i][j] = gridItem;
+    gridItems[i][j].addEventListener("click", focusInput);
 
     // Append the grid item to the grid container
     scoreBoard.appendChild(gridItem);

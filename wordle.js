@@ -16,7 +16,14 @@ const winMessage = document.querySelector(".win-message");
 let hasWon = false;
 
 function focusInput() {
-  document.getElementById("hidden-input").focus();
+  const input = document.getElementById("hidden-input");
+  const targetRow = gridItems[rowNumber][0];
+
+  if (targetRow) {
+    targetRow.appendChild(input); // move input to current row
+  }
+
+  // Focus without scroll
   input.focus({ preventScroll: true });
 }
 

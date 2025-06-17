@@ -16,8 +16,8 @@ const winMessage = document.querySelector(".win-message");
 let hasWon = false;
 
 function focusInput() {
-  document.getElementById("hidden-input").focus();
-  input.focus({ preventScroll: true });
+  document.getElementById("hidden-input").focus({ preventScroll: true });
+  
 }
 
 async function validateWord(word) {

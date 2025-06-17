@@ -17,23 +17,30 @@ let hasWon = false;
 
 function focusInput() {
   document.getElementById("hidden-input").focus({ preventScroll: true });
-  
 }
 
 async function validateWord(word) {
-  const promise = await fetch(valid, {
-    method: "POST",
-    body: JSON.stringify({ word: word }),
-  });
-  const processedResponse = await promise.json();
-  console.log(processedResponse.validWord);
-  return processedResponse.validWord;
+  try {
+    const promise = await fetch(valid, {
+      method: "POST",
+      body: JSON.stringify({ word: word }),
+    });
+    const processedResponse = await promise.json();
+    console.log(processedResponse.validWord);
+    return processedResponse.validWord;
+  } catch (error) {
+    alert("Network Error, Please check your connection");
+  }
 }
 
 async function getWord() {
-  const promise = await fetch(WORD_FETCH);
-  const response = await promise.json();
-  return response.word;
+  try {
+    const promise = await fetch(WORD_FETCH);
+    const response = await promise.json();
+    return response.word;
+  } catch {
+    alert("Failed to get word of the day, Please try again later");
+  }
 }
 
 window.addEventListener("load", async () => {

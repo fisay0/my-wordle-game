@@ -52,7 +52,7 @@ for (let i = 0; i < rows; i++) {
   }
 }
 
-gridItems[rowNumber][columnNumber].addEventListener("click", focusInput);
+gridItems.addEventListener("click", focusInput);
 
 document.addEventListener("keydown", onKeyPress);
 function onKeyPress(e) {

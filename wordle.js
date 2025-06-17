@@ -16,20 +16,9 @@ const winMessage = document.querySelector(".win-message");
 let hasWon = false;
 
 function focusInput() {
-  const input = document.getElementById("hidden-input");
-  const targetRow = gridItems[rowNumber][0];
-
-  if (targetRow) {
-    targetRow.appendChild(input); // move input to current row
-  }
-
-  // Focus without scroll
+  document.getElementById("hidden-input").focus();
   input.focus({ preventScroll: true });
 }
-
-document.getElementById("hidden-input").addEventListener("keydown", (e) => {
-  e.preventDefault(); //stop some scroll default on mobile
-});
 
 async function validateWord(word) {
   const promise = await fetch(valid, {
